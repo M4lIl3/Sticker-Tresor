@@ -5,7 +5,8 @@ plugins {
 
 // Auf GitHub zählt jeder Build die Versionsnummer hoch, damit Updates sauber installiert werden.
 val buildNumber = (System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInt()
-val keystoreFile: String? = System.getenv("KEYSTORE_FILE")
+fun env(name: String): String? = System.getenv(name)?.takeIf { it.isNotBlank() }
+val keystoreFile: String? = env("KEYSTORE_FILE")
 
 android {
     namespace = "de.stickertresor.app"
@@ -23,9 +24,9 @@ android {
         create("release") {
             if (keystoreFile != null) {
                 storeFile = file(keystoreFile)
-                storePassword = System.getenv("KEYSTORE_PASSWORD")
-                keyAlias = System.getenv("KEY_ALIAS")
-                keyPassword = System.getenv("KEY_PASSWORD")
+                storePassword = env("KEYSTORE_PASSWORD")
+                keyAlias = env("KEY_ALIAS") ?: "tresor"
+                keyPassword = env("KEY_PASSWORD") ?: env("KEYSTORE_PASSWORD")
             }
         }
     }

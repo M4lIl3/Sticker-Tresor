@@ -34,6 +34,6 @@ Updates installierst du genauso; die App und deine Sicherung bleiben dabei erhal
 
 ## Technik
 
-Kotlin, minSdk 30 (Android 11). Jeder Push auf `main` baut über GitHub Actions eine signierte APK und veröffentlicht sie als Release. Der Signaturschlüssel liegt als Repository-Secret (`KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`).
+Kotlin, minSdk 30 (Android 11). Jeder Push auf `main` baut über GitHub Actions eine signierte APK und veröffentlicht sie als Release. Der Signaturschlüssel liegt als Repository-Secret (`KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`). Ohne diese Secrets entsteht nur eine Test-APK als Actions-Artefakt, kein Release.
 
 Lokal bauen: Projekt in Android Studio öffnen oder `./gradlew assembleRelease`.
