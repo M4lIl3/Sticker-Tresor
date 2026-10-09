@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tresor_primary">#1F6F5C</color>
+    <color name="tresor_secondary">#4A635B</color>
+    <color name="icon_background">#1F6F5C</color>
+    <color name="icon_peel">#B8E3D6</color>
+</resources>
