@@ -5,6 +5,12 @@
          - WhatsApp-Ordner wird über die Android-Ordnerauswahl freigegeben
          - Gesicherte Sticker landen über MediaStore in Bilder/Sticker-Tresor -->
 
+    <!-- Damit die App prüfen kann, ob WhatsApp installiert ist -->
+    <queries>
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
+    </queries>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,12 +20,32 @@
         android:theme="@style/Theme.StickerTresor">
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Sticker-Packs für WhatsApp -->
+        <provider
+            android:name=".whatsapp.StickerProvider"
+            android:authorities="de.stickertresor.app.stickerprovider"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.whatsapp.sticker.READ" />
+
+        <!-- Teilen einzelner Sticker -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="de.stickertresor.app.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 </manifest>

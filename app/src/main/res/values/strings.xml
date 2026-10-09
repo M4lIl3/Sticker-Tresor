@@ -1,31 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Sticker-Tresor</string>
-    <string name="sticker">Sticker</string>
-
-    <string name="btn_backup">Jetzt sichern</string>
-    <string name="btn_folder">WhatsApp-Sticker-Ordner verbinden</string>
-    <string name="btn_folder_change">Anderen Ordner wählen</string>
-    <string name="switch_auto">Täglich automatisch sichern (beim Laden)</string>
-
-    <string name="status_not_connected">Noch nicht verbunden. Tippe auf „WhatsApp-Sticker-Ordner verbinden“, dann unten auf „Diesen Ordner verwenden“ und „Zulassen“.</string>
-    <string name="status_connected_never">Mit WhatsApp verbunden ✓ · noch nie gesichert</string>
-    <string name="status_connected_last">Mit WhatsApp verbunden ✓ · zuletzt gesichert: %1$s</string>
-
-    <string name="gallery_title">Gesicherte Sticker (%1$d) · Bilder/Sticker-Tresor</string>
-    <string name="empty_not_connected">Hier erscheinen deine gesicherten Sticker.</string>
-    <string name="empty_connected">Noch nichts gesichert. Tippe auf „Jetzt sichern“.</string>
-
-    <string name="result_none_found">Im gewählten Ordner wurden keine Sticker gefunden.</string>
-    <string name="result_nothing_new">Alles schon gesichert – %1$d Sticker geprüft, nichts Neues.</string>
-    <string name="result_saved">%1$d neue Sticker gesichert, %2$d waren schon da.</string>
-    <string name="result_failed">%1$d konnten nicht gelesen werden.</string>
-    <string name="backup_error">Sicherung fehlgeschlagen: %1$s</string>
-
-    <string name="folder_error">Der Ordner konnte nicht dauerhaft freigegeben werden.</string>
-    <string name="wrong_folder_title">Richtiger Ordner?</string>
-    <string name="wrong_folder_text">Der gewählte Ordner scheint nicht der WhatsApp-Sticker-Ordner zu sein. Er liegt unter Android › media › com.whatsapp › WhatsApp › Media › WhatsApp Stickers.</string>
-
-    <string name="share">Teilen</string>
-    <string name="close">Schließen</string>
 </resources>

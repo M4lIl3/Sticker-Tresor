@@ -7,6 +7,7 @@ import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
+import de.stickertresor.app.data.Backup
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
@@ -15,11 +16,11 @@ import java.util.concurrent.TimeUnit
 class BackupWorker(ctx: Context, params: WorkerParameters) : CoroutineWorker(ctx, params) {
 
     override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
-        if (StickerStore.treeUri(applicationContext) == null) {
+        if (Backup.treeUri(applicationContext) == null) {
             return@withContext Result.success()
         }
         try {
-            StickerStore.backup(applicationContext)
+            Backup.run(applicationContext)
             Result.success()
         } catch (e: Exception) {
             Result.retry()
